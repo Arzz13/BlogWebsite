@@ -1,0 +1,20 @@
+<%- include('partials/header');-%>
+<!-- To include header ejs file.-->
+<h1>Home</h1>
+
+<p>
+    <%= homeContent %>
+</p>
+<% for(var i=0;i<posts.length;i++) { %>
+<h1><%= posts[i].title  %> </h1>
+<p>
+    <%= posts[i].content.substring(0,20)+"..." %>
+    <!--SUBSTRING METHOD USED TO DISPLAY ONLY THE FIRST 20 CHARACTERS OF THE CONTENT.-->
+    <a href="/posts/<%= posts[i]._id%>">Read More</a>  <!-- Only in post routes we have our individual posts to be seen.So, "/post" used to give post requests to the server.-->
+
+</p>
+<% };  %>
+
+
+<!-- To include footer ejs -->
+<%- include('partials/footer')%>
